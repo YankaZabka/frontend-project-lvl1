@@ -4,5 +4,13 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: npm install
+	run: |
+	  make install
+	env:
+	  CI: true
+
       - name: run-linter
-        run: cd ../.. && make lint
+        run: make lint
