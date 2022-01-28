@@ -21,7 +21,8 @@ const progressionGame = () => {
     const question = questionObject.progression
       .map((item, index) => (index === questionObject.emptyIndex ? '..' : item))
       .join(' ');
-    const correctAnswer = questionObject.progression[questionObject.emptyIndex].toString();
+    const correctAnswer = String(questionObject.progression[questionObject.emptyIndex]);
+
     const result = gameStep(userName, question, correctAnswer);
     answers.push(result);
   }
