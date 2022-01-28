@@ -26,6 +26,6 @@ export const gameStep = (userName, question, correctAnswer) => {
     return answer;
   }
   console.log(`"${answer}" is a wrong answer ;(. Correct answer is "${correctAnswer}"`);
-  console.log(`Let's try again, ${userName}`);
+  console.log(`Let's try again, ${userName}!`);
   return 'GAME OVER';
 };
