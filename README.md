@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/YankaZabka/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/YankaZabka/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)  
 
-##Mind Games
+## Mind Games
 This is a project from the **hexlet** company's "front-end developer" course called "Mind Games".
 You can download this repository for yourself, install the necessary dependencies using the `make install` command. Next, you can install the package using `npm link`. Now you can launch games directly from the terminal using only their name!  
 **Available games:**
