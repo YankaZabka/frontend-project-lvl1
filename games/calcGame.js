@@ -13,14 +13,14 @@ const calcGame = () => {
       firstOperand: getRandomNumber(1, 100),
       operator: possibleOperators[getRandomNumber(0, 2)],
       secondOperand: getRandomNumber(1, 100),
-      calculate() {
-        switch (this.operator) {
+      calculate(firstOperand, secondOperand, operator) {
+        switch (operator) {
           case '-':
-            return this.firstOperand - this.secondOperand;
+            return firstOperand - secondOperand;
           case '+':
-            return this.firstOperand + this.secondOperand;
+            return firstOperand + secondOperand;
           case '*':
-            return this.firstOperand * this.secondOperand;
+            return firstOperand * secondOperand;
           default:
             console.log('Error');
             return 'ERROR';
@@ -28,7 +28,12 @@ const calcGame = () => {
       },
     };
     const question = `${questionObject.firstOperand} ${questionObject.operator} ${questionObject.secondOperand}`;
-    const correctAnswer = questionObject.calculate().toString();
+    const correctAnswer = questionObject.calculate(
+      questionObject.firstOperand,
+      questionObject.secondOperand,
+      questionObject.operator,
+    )
+      .toString();
     const result = gameStep(userName, question, correctAnswer);
     answers.push(result);
   }

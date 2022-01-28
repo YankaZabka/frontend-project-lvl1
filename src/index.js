@@ -18,6 +18,12 @@ export const generateProgression = (start, diff, length) => {
   });
 };
 
+export const calcGreatestCommonDivisor = (x, y) => {
+  if (y > x) return calcGreatestCommonDivisor(y, x);
+  if (!y) return x;
+  return calcGreatestCommonDivisor(y, x % y);
+};
+
 export const gameStep = (userName, question, correctAnswer) => {
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');

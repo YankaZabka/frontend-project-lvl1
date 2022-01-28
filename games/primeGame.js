@@ -10,9 +10,9 @@ const primeGame = () => {
   while (answers.length < NUMBER_OF_ROUNDS && answers[answers.length - 1] !== 'GAME OVER') {
     const questionObject = {
       number: getRandomNumber(1, 100),
-      calculate() {
-        for (let i = 2; i <= this.number / 2; i += 1) {
-          if (this.number % i === 0) {
+      calculate(number) {
+        for (let i = 2; i <= number / 2; i += 1) {
+          if (number % i === 0) {
             return 'no';
           }
         }
@@ -20,7 +20,7 @@ const primeGame = () => {
       },
     };
     const question = questionObject.number;
-    const correctAnswer = questionObject.calculate();
+    const correctAnswer = questionObject.calculate(questionObject.number);
     const result = gameStep(userName, question, correctAnswer);
     answers.push(result);
   }

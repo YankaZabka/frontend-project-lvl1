@@ -1,5 +1,7 @@
 import greeting from '../src/cli.js';
-import { gameStep, getRandomNumber, NUMBER_OF_ROUNDS } from '../src/index.js';
+import {
+  gameStep, getRandomNumber, calcGreatestCommonDivisor, NUMBER_OF_ROUNDS,
+} from '../src/index.js';
 
 const gcdGame = () => {
   const answers = [];
@@ -18,8 +20,10 @@ const gcdGame = () => {
       },
     };
     const question = `${questionObject.firstNumber} ${questionObject.secondNumber}`;
-    const correctAnswer = questionObject
-      .calculate(questionObject.firstNumber, questionObject.secondNumber)
+    const correctAnswer = calcGreatestCommonDivisor(
+      questionObject.firstNumber,
+      questionObject.secondNumber,
+    )
       .toString();
 
     const result = gameStep(userName, question, correctAnswer);
