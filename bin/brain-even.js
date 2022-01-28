@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import greeting from "../src/cli";
 
 const evenGame = () => {
   const NUMBER_OF_ROUNDS = 3;
@@ -24,9 +25,9 @@ const evenGame = () => {
     }
   };
 
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!\nAnswer "yes" if the number is even, otherwise answer "no".`);
+
+  const userName = greeting()
+  console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
 
   while (answers.length < NUMBER_OF_ROUNDS && answers[answers.length - 1] !== 'wrong') {
     gameStep(userName);
