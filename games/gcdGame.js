@@ -13,11 +13,6 @@ const gcdGame = () => {
     const questionObject = {
       firstNumber: getRandomNumber(1, 100),
       secondNumber: getRandomNumber(1, 100),
-      calculate(x, y) {
-        if (y > x) return this.calculate(y, x);
-        if (!y) return x;
-        return this.calculate(y, x % y);
-      },
     };
     const question = `${questionObject.firstNumber} ${questionObject.secondNumber}`;
     const correctAnswer = calcGreatestCommonDivisor(
